@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap'); 
+
+:root{
+    --primairy-color:#009444;
+    --secondary-color: #F7F5EB; 
+    --accent-color: #A6CF98;
+    --heading-text: 'Outfit 700', sans-serif; 
+    --subheading-text: 'Outfit 600', sans-serif;
+    --body-text: 'Outfit 400', sans-serif;
+} 
+
+body{
+    background-color: var(--secondary-color);
+} 
+
+h1{
+    font-family: var(--heading-text);
+} 
+
+h2{
+    font-family: var(--subheading-text);
+}
+
+p, button{
+    font-family: var(--body-text);
+}
+
+nav{
+    display: flex;
+    flex-direction: row; 
+    color: var(--accent-color);
+    padding: 0.625rem;
+    height: 3.125rem;
+    justify-content: space-between; 
+    font-family: var(--body-text);
+} 
+
+nav ul {
+    display: flex;
+    gap: 1.25rem;
+    list-style-type: none; 
+} 
+
+nav a {
+    text-decoration: none;
+    color: var(--primairy-color); 
+ } 
+
+.hero{
+    background-image: url(..//images/vadim-kaipov-8ZELrodSvTc-unsplash.jpg);
+    background-size: cover;
+    min-height: 800px; 
+    color: var(--secondary-color);
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    text-align: center;
+    align-items: center; 
+}  
+
+.hero h1{
+    font-family: var(--heading-text);
+    color: var(--primairy-color);
+} 
+
+.hero p{
+    margin: 20px;
+    max-width: 550px;
+}
+
+.product-gallery{
+    display: flex;
+    flex-direction: row; 
+    gap: 50px;
+} 
+
+.plants p{
+    text-align: center;
+    background-color: var(--accent-color);
+    height: 50px; 
+    margin:auto;
+} 
+
+#soil{
+    display: flex;
+} 
+
+.soil{
+    flex-direction: row;
+}
+
+button{
+    background-color: var(--primairy-color);
+    border: var(--accent-color);
+    border-radius: 5px;
+    color: var(--accent-color); 
+    padding: 5px;
+} 
+
+#footer{
+    background-color:var(--primairy-color); 
+    margin: 10px auto; 
+    height: 65px;
+} 
+
+.socials ul, .socials ul li{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+.socials ul li a{ 
+    font-family: var(--body-text);
+    color: var(--secondary-color);
+    padding: 10px; 
+    margin-left: 15px;
+}
+
+@media screen and (max-width: 48em){ 
+
+    .hero{
+        background-size: cover;
+        background-position: center;
+    } 
+
+    .product-gallery{
+        flex-direction: column;
+    } 
+} 
+
+@media screen and (max-width: 30em){
+
+    .hero{
+        min-height: 500px; 
+    }
+
+    .product-gallery{
+        flex-direction: column;
+    }
+}
