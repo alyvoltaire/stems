@@ -13,7 +13,7 @@ body{
     background-color: var(--secondary-color);
 } 
 .logo img {
-    width: 100px;
+    width: 6.25rem;
 }
 h1{
     font-family: var(--heading-text);
@@ -23,7 +23,7 @@ h2{
     font-family: var(--subheading-text);
 }
 
-p, button{
+p{
     font-family: var(--body-text);
 }
 
@@ -36,6 +36,15 @@ nav{
     justify-content: space-between; 
     font-family: var(--body-text);
 } 
+
+#menu-toggle{
+    display: none;  
+    border:none;
+}
+
+#list.active{
+    display: flex; 
+}
 
 nav ul {
     display: flex;
@@ -51,24 +60,25 @@ nav a {
 .hero{
     background-image: linear-gradient(transparent 20%, rgba(20, 19, 19, 0.663) 80%) ,url(..//images/vadim-kaipov-8ZELrodSvTc-unsplash.jpg);
     background-size: cover;
-    min-height: 750px; 
+    min-height: 46.875rem; 
     color: var(--secondary-color);
     display: flex;
     flex-direction: column; 
     justify-content: center;
     text-align: center;
     align-items: center; 
-    text-shadow: 1px 1px 4px black;
+    text-shadow: .0625rem .00625rem 0.25rem black;
 }  
 
 .hero h1, .hero p{
-    margin: 20px;
-    max-width: 550px;
+    margin: 1.25rem;
+    max-width: 34.375rem;
 } 
 
 #products h2{
-    font-size: x-large; 
-    margin-left: 30px;
+    font-size: 3rem; 
+    margin-left: 1.875rem; 
+    color: var(--primairy-color);
 }
 
 .product-gallery{
@@ -76,48 +86,43 @@ nav a {
     flex-direction: row;
     flex-wrap: wrap; 
     justify-content: space-evenly;
-    gap: 50px;
+    gap: 3.125rem;
 } 
 
 .plants p{
     text-align: center;
     background-color: var(--accent-color);
-    height: 50px; 
-    margin:auto;
+    height: 3.125rem; 
+    margin:auto; 
+    padding: .625rem;
+} 
+.plants img {
+    display: block;
 } 
 
-#shop-soil{
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 50px;
-}  
+#gallery{
+     background-color: var(--accent-color); 
+     margin-top: 3.125rem; 
+     padding: 1.875rem;
+} 
 
-#shop-soil img{
-    margin-left: 30px;
-}
-
-.soil{
-    flex-direction: row;
+#gallery h2{
     text-align: center;
-} 
-
-.soil p{
-    width: 750px; 
-    margin: 20px 0 20px 0;
+    color: var(--primairy-color);
+    font-size: 3rem;
 }
 
-button{
-    background-color: var(--primairy-color);
-    border: var(--accent-color);
-    border-radius: 5px;
-    color: var(--accent-color); 
-    padding: 5px;
-} 
+.photo-gallery{ 
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr; 
+    justify-items: center;
+}
 
 #footer{
     background-color:var(--primairy-color); 
-    margin: 10px auto; 
-    height: 65px;
+    margin: .625rem auto; 
+    height: 4.0625rem;
 } 
 
 .socials ul, .socials ul li{
@@ -129,8 +134,8 @@ button{
 .socials ul li a{ 
     font-family: var(--body-text);
     color: var(--secondary-color);
-    padding: 10px; 
-    margin-left: 15px;
+    padding: .625rem; 
+    margin-left: .9375rem;
 }
 
 @media screen and (max-width: 48em){ 
@@ -139,21 +144,68 @@ button{
         background-size: cover;
         background-position: center;
     } 
+    
+    #products h2{
+        text-align: center;
+    }
 
     .product-gallery{
-        flex-direction: column;
+        flex-direction: row;
     } 
+
+    .photo-gallery{
+        grid-template-columns: 1fr;
+        row-gap: .9375rem;
+    }
 } 
 
-@media screen and (max-width: 30em){
+@media screen and (max-width: 30em){ 
+
+    #list{
+        display: none;
+        flex-direction: column;
+        position: absolute; 
+        background-color: var(--secondary-color); 
+        padding: 1.25rem; 
+        border-radius: 0.625rem;
+    } 
+
+    #menu-toggle{
+        display: block; 
+        color: var(--primairy-color);
+    } 
+
+    #menu.active{
+        display: flex; 
+    }
 
     .hero{
-        min-height: 500px; 
+        min-height: 31.25rem; 
+    } 
+
+    #products h2{
+        text-align: center;
+        font-size: 1.875rem;
     }
+
     .plants img {
         width: 100%;
     }
     .product-gallery{
         flex-direction: column;
+    } 
+
+    .photo-gallery img{
+        width: 100%;
+    } 
+
+    #footer{
+        height: 7.1875rem;
     }
+
+    .socials ul, .socials ul li{
+        flex-direction: column;
+        justify-content: center;
+    }
+
 }
